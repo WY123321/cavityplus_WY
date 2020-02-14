@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<button id="test1" onclick="changeValue();">change</button>
+</body>
+<script src="resource/js/jquery/jquery.js"></script>
+<script type="text/javascript">
+    var value = 1;
+    $(function () {
+        var temp;   //代码A
+        var interval = setInterval(function () {    //代码B
+
+
+            if (value > 5) {
+                temp = value;
+                clearInterval(interval);    //终止循环
+            }else{
+                $('#test1').trigger('click');
+            }
+            console.log("interval执行，当前value=" + value);
+        }, 3000);
+        console.log("interval执行，当前value=" + value);
+    });
+    function changeValue() {
+        value++;
+    }
+</script>
+</html>

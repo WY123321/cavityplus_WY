@@ -1,0 +1,32 @@
+#
+# This file is create by LigBuilder/Pocket
+# It lists the pharmacophore features detected
+# Creation time: Tue Dec 19 16:57:11 2017
+#
+# The 1st column: feature ID number
+# The 2nd column: feature property
+# The 3rd column: feature symbol
+# The 4th column: X coordinate
+# The 5th column: Y coordinate
+# The 6th column: Z coordinate
+# The 7th column: average score
+# The 8th column: neighboring grids around this feature
+# The 9th column: Depth of the feature
+#
+<Start>
+<Feature_description>
+ 1  H-bond_donor_site      D     47.00    10.50   101.50    89.15  141  2
+ 2  H-bond_donor_site      D     50.00    15.00    98.00    78.88  132  3
+ 3  H-bond_donor_site      D     49.50    11.50    99.00    34.64  58  0
+ 4  H-bond_acceptor_site   A     47.00    13.00    96.00    31.50  66  0
+ 5  Hydrophobic_site       H     44.50    15.00    94.50    13.59  33  4
+ 6  H-bond_acceptor_site   A     45.50    18.00    96.00    14.99  43  2
+<Feature_internal_distance>
+        1      2      3      4      5      6  
+ 1  -----   6.44   3.67   6.04   8.69   9.42  
+ 2   6.44  -----   3.67   4.12   6.52   5.77  
+ 3   3.67   3.67  -----   4.18   7.58   8.20  
+ 4   6.04   4.12   4.18  -----   3.54   5.22  
+ 5   8.69   6.52   7.58   3.54  -----   3.50  
+ 6   9.42   5.77   8.20   5.22   3.50  -----  
+<End>

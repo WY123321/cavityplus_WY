@@ -1,0 +1,11 @@
+Namespace(allchains=False, chainID=None, keepzeroocc=False, nopdbout=False, pdbFile='../2017.12.20XuYoujun_cavity/thischains.pdb', removechain=False)
+Namespace(allchains=True, chainID=' ', keepzeroocc=False, nopdbout=False, pdbFile='../2017.12.20XuYoujun_cavity/thischains.pdb', removechain=False)
+ 
+Found existing PDB file at ../2017.12.20XuYoujun_cavity/thischains.pdb
+thischains
+finish status process
+281
+282
+thischains _   282 ALT --- MOD --- OK
+>thischains__
+MEMEKEFEQIDKSGSWAAIYQDIRHEASDFPCRVAKLPKNKNRNRYRDVSPFDHSRIKLHQEDNDYINASLIKMEEAQRSYILTQGPLPNTCGHFWEMVWEQKSRGVVMLNRVMEKGSLKCAQYWPQKEEKEMIFEDTNLKLTLISEDIKSYYTVRQLELENLTTQETREILHFHYTTWPDFGVPESPASFLNFLFKVRESGSLSPEHGPVVVHCSAGIGRSGTFCLADTCLLLMDKRKDPSSVDIKKVLLEMRKFRMGLIQTADQLRFSYLAVIEGAKFIM

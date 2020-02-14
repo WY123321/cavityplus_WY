@@ -1,0 +1,4 @@
+Namespace(allchains=False, chainID=None, keepzeroocc=False, nopdbout=False, pdbFile='cavity/protein.pdb', removechain=False)
+Namespace(allchains=True, chainID=' ', keepzeroocc=False, nopdbout=False, pdbFile='cavity/protein.pdb', removechain=False)
+ 
+File for cavity/protein.pdb doesn't exist, exit.

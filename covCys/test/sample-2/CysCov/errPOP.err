@@ -1,0 +1,23 @@
+
+POPS* : Parameter OPtimised Surface of proteins and nucleic acids
+
+date: Sun Dec 24 05:37:55 2017
+pdb: protein_renumber.pdb
+traj: (null)
+coarse: 0
+multiModel: 0
+rProbe: 1.400000
+Input structure
+	PDB file: protein_renumber.pdb
+	PDB file content:
+	nAtom = 2830 (excluding hydrogens)
+	nAllAtom = 2830 (all atoms to match trajectory entries)
+Groups
+Types
+Topology
+Solvent Accessible Surface Area
+SASA Output:
+	SASA of reference molecule: pops.out
+Solvation Free Energy
+SFE Output:
+	SFE of reference molecule: sigma.out

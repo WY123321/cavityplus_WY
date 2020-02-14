@@ -1,0 +1,11 @@
+Namespace(allchains=False, chainID=None, keepzeroocc=False, nopdbout=False, pdbFile='/work01/webservers/corrsite/testweb/semantic-ui-forest.com/templates/bootstrap/covCys/test/sample-2/./cavity//protein.pdb', removechain=False)
+Namespace(allchains=True, chainID=' ', keepzeroocc=False, nopdbout=False, pdbFile='/work01/webservers/corrsite/testweb/semantic-ui-forest.com/templates/bootstrap/covCys/test/sample-2/./cavity//protein.pdb', removechain=False)
+ 
+Found existing PDB file at /work01/webservers/corrsite/testweb/semantic-ui-forest.com/templates/bootstrap/covCys/test/sample-2/./cavity//protein.pdb
+protein
+finish status process
+349
+350
+protein _   350 --- --- MOD --- OK
+>protein__
+SVAHGLAWSYYIGYLRLILPELQARIRTYNQHYNNLLRGAVSQRLYILLPLDCGVPDNLSMADPNIRFLDKLPQDRVYSNSIYELLENGQRAGTCVLEYATPLQTLFAMSQYSQAGFSREDRLEQAKLFCRTLEDILADAPESQNNCRLIAYQEPADDSSFSLSQEVLRHLRQEESVAHGLAWSYYIGYLRLILPELQARIRTYNQHYNNLLRGAVSQRLYILLPLDCGVPDNLSMADPNIRFLDKLPQDRVYSNSIYELLENGQRAGTCVLEYATPLQTLFAMSQYSQAGFSREDRLEQAKLFCRTLEDILADAPESQNNCRLIAYQEPADDSSFSLSQEVLRHLRQEE

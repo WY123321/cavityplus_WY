@@ -1,0 +1,107 @@
+@> 166 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 245 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 180 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 223 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 195 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 146 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 228 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 160 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 131 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 172 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 204 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 282 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 265 atoms and 1 coordinate set(s) were parsed in 0.00s.
+hello 1
+hi no CYS in this cavity
+chain A resnum 309
+chain A resnum 292
+CYS_A_292 in outKeyResStr
+CYS_A_309 in outKeyResStr
+hi no CYS in this cavity
+chain A resnum 257
+CYS_A_257 in outKeyResStr
+chain A resnum 206
+CYS_A_206 in outKeyResStr
+chain A resnum 309
+CYS_A_309 in outKeyResStr
+chain B resnum 309
+chain B resnum 292
+CYS_B_292 in outKeyResStr
+CYS_B_309 in outKeyResStr
+hi no CYS in this cavity
+hi no CYS in this cavity
+chain A resnum 206
+CYS_A_206 in outKeyResStr
+chain B resnum 206
+CYS_B_206 in outKeyResStr
+hi no CYS in this cavity
+hi no CYS in this cavity
+cav Env finished
+    resCavID              cavityPDB  surfN  hbS  acceptorS  donorS  bindS  \
+0  CYS_A_292   protein_cavity_7.pdb   1165    7        410     536    735   
+1  CYS_A_309   protein_cavity_7.pdb   1165    7        410     536    735   
+2  CYS_A_257   protein_cavity_6.pdb   1512    4        588     646    898   
+3  CYS_A_206   protein_cavity_3.pdb   1279   25        355     455    696   
+4  CYS_A_309  protein_cavity_10.pdb    816    0        205     489    549   
+5  CYS_B_292   protein_cavity_5.pdb    993    6        347     546    664   
+6  CYS_B_309   protein_cavity_5.pdb    993    6        347     546    664   
+7  CYS_A_206  protein_cavity_11.pdb    683   36        103     404    430   
+8  CYS_B_206   protein_cavity_4.pdb   1230   30        327     448    647   
+
+   depS comment  volN    ...     ENV4-THR  ENV4-TYR  ENV4-TRP  ENV4-ILE  \
+0    13       o  3043    ...            0         0         0         3   
+1    13       o  3043    ...            0         1         0         3   
+2    12       o  4516    ...            1         1         0         0   
+3    11       o  4799    ...            0         1         0         0   
+4    13       o  1400    ...            0         0         0         1   
+5    13       o  2524    ...            0         0         0         2   
+6    13       o  2524    ...            0         1         0         2   
+7     9       o  1159    ...            0         2         0         0   
+8    11       o  4433    ...            0         1         0         0   
+
+   ENV4-LEU  ENV4-GLY  ENV4-HIS  ENV4-PHE  ENV4-PRO  ENV4-MET  
+0         4         0         1         0         0         0  
+1         5         0         1         0         1         0  
+2         5         2         0         0         0         0  
+3         2         1         0         1         1         0  
+4         3         0         0         0         2         0  
+5         4         0         0         0         0         0  
+6         5         0         1         0         1         0  
+7         2         1         0         0         2         0  
+8         2         1         0         1         1         0  
+
+[9 rows x 99 columns]
+    resCavID              cavityPDB  surfN  hbS  acceptorS  donorS  bindS  \
+0  CYS_A_292   protein_cavity_7.pdb   1165    7        410     536    735   
+1  CYS_A_309   protein_cavity_7.pdb   1165    7        410     536    735   
+2  CYS_A_257   protein_cavity_6.pdb   1512    4        588     646    898   
+3  CYS_A_206   protein_cavity_3.pdb   1279   25        355     455    696   
+4  CYS_A_309  protein_cavity_10.pdb    816    0        205     489    549   
+5  CYS_B_292   protein_cavity_5.pdb    993    6        347     546    664   
+6  CYS_B_309   protein_cavity_5.pdb    993    6        347     546    664   
+7  CYS_A_206  protein_cavity_11.pdb    683   36        103     404    430   
+8  CYS_B_206   protein_cavity_4.pdb   1230   30        327     448    647   
+
+   depS comment  volN    ...       ENV2.S    ENV3.S    ENV4.S  ENV1.T  ENV2.T  \
+0    13       o  3043    ...     0.000000  0.000000  0.000000     0.0     0.0   
+1    13       o  3043    ...     0.100000  0.071429  0.047619     0.0     0.0   
+2    12       o  4516    ...     0.100000  0.071429  0.050000     0.5     0.1   
+3    11       o  4799    ...     0.000000  0.066667  0.111111     0.0     0.0   
+4    13       o  1400    ...     0.125000  0.083333  0.066667     0.0     0.0   
+5    13       o  2524    ...     0.000000  0.000000  0.000000     0.0     0.0   
+6    13       o  2524    ...     0.111111  0.076923  0.050000     0.0     0.0   
+7     9       o  1159    ...     0.000000  0.000000  0.000000     0.0     0.0   
+8    11       o  4433    ...     0.000000  0.066667  0.105263     0.0     0.0   
+
+     ENV3.T  ENV4.T      hbVR      hDVR     lipVR  
+0  0.000000    0.00  0.036477  0.458101  0.169241  
+1  0.000000    0.00  0.036477  0.458101  0.169241  
+2  0.071429    0.05  0.005093  0.494021  0.164305  
+3  0.000000    0.00  0.133986  0.340696  0.177329  
+4  0.000000    0.00  0.000000  0.677857  0.212143  
+5  0.000000    0.00  0.043978  0.522583  0.168780  
+6  0.000000    0.00  0.043978  0.522583  0.168780  
+7  0.000000    0.00  0.185505  0.718723  0.206212  
+8  0.000000    0.00  0.130611  0.368374  0.179111  
+
+[9 rows x 234 columns]

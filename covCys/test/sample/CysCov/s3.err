@@ -1,0 +1,7 @@
+hello 1
+cav Env finished
+No CYS in side cavity or no cavity
+Traceback (most recent call last):
+  File "s3-grep-cavityInfo.py", line 187, in <module>
+    resultLine = "%s\t%s\t%s\t%d\n"%(pdbID,prefix,'None',len(fileList))
+NameError: name 'pdbID' is not defined

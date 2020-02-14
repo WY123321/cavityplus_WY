@@ -1,0 +1,50 @@
+s4-join-cavity-env.py:62: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  resnoCav['Note']='Not in a cavity'
+s4-join-cavity-env.py:63: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  resnoCav['cov']='Not determined'
+s4-join-cavity-env.py:64: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  resnoCav['cavityPDB']='None'
+/root/anaconda3/envs/py35/lib/python3.5/site-packages/sklearn/base.py:311: UserWarning: Trying to unpickle estimator SVC from version 0.18.1 when using version 0.19.1. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+       resid   resCavID              cavityPDB  cov
+0   CYS_A_53  CYS_A_206   protein_cavity_3.pdb  Yes
+1   CYS_A_53  CYS_A_206  protein_cavity_11.pdb   No
+2   CYS_A_95  CYS_A_257   protein_cavity_6.pdb   No
+3  CYS_A_130  CYS_A_292   protein_cavity_7.pdb   No
+4  CYS_A_147  CYS_A_309   protein_cavity_7.pdb   No
+5  CYS_A_147  CYS_A_309  protein_cavity_10.pdb   No
+6  CYS_B_228  CYS_B_206   protein_cavity_4.pdb  Yes
+8  CYS_B_305  CYS_B_292   protein_cavity_5.pdb   No
+       resid   resCavID              cavityPDB             cov  \
+0   CYS_A_53  CYS_A_206   protein_cavity_3.pdb             Yes   
+1   CYS_A_53  CYS_A_206  protein_cavity_11.pdb              No   
+2   CYS_A_95  CYS_A_257   protein_cavity_6.pdb              No   
+3  CYS_A_130  CYS_A_292   protein_cavity_7.pdb              No   
+4  CYS_A_147  CYS_A_309   protein_cavity_7.pdb              No   
+5  CYS_A_147  CYS_A_309  protein_cavity_10.pdb              No   
+6  CYS_B_228  CYS_B_206   protein_cavity_4.pdb             Yes   
+8  CYS_B_305  CYS_B_292   protein_cavity_5.pdb              No   
+7  CYS_B_270  CYS_B_257                   None  Not determined   
+
+              Note  
+0             None  
+1             None  
+2             None  
+3             None  
+4             None  
+5             None  
+6             None  
+8             None  
+7  Not in a cavity  

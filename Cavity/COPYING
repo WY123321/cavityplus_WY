@@ -1,0 +1,44 @@
+License of Cavity v1.1 for Linux
+Written by Yaxia Yuan
+
+
+Copyright (C) 2009-2012 Institute of Physical Chemistry,
+Peking University All Rights Reserved.
+
+This program implements an binding site detection and estimation method.
+
+The contact address:
+
+Prof. Luhua Lai
+Institute of Physical Chemistry, Peking University
+Beijing 100871, P.R.China
+E-mail: lhlai@pku.edu.cn Fax:86-10-62751725
+
+
+License agreement:
+
+1. The Institute of Physical Chemistry at Peking University ("IPC") grants to the 
+user a non-exclusive, non-transferable license to use Cavity v1.1 ("PROGRAM").
+
+2. PROGRAM is developed in Prof. Luhua Lai's group. Copyright of PROGRAM belongs to 
+Peking University. Commercialization of PROGRAM and any of its modified version is 
+not allowed. Any incorporation of calculation result into commercial software without 
+author's authorization is not allowed.
+
+3. PROGRAM is distributed without any charge to academic users. Commercial users 
+please contact Prof. Lai for a commercial license.
+
+4. PROGRAM cannot be copied except for in-house use on the condition that the copyright 
+requirement is retained.
+
+5. The user agrees that PROGRAM is a research tool which is still under development. 
+Peking University has no warranty and accompanying service for PROGRAM.
+
+6. The calculation results of PROGRAM belong to the signed users (individual or institute). 
+The user is required to cite PROGRAM in any resultant publication.(Yaxia Yuan;Jianfeng Pei;
+Luhua Lai, "LigBuilder 2: A Practical de Novo Drug Design Approach",J. Chem. Inf. Model.
+, 2011, 51 (5), pp 1083~1091)(Yaxia Yuan;Jianfeng Pei;Luhua Lai, Binding Site Detection 
+and Druggability Prediction of Protein Targets for Structure-Based Drug Design.,Current 
+pharmaceutical design, 2012)
+
+

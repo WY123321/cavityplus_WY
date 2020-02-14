@@ -1,0 +1,4 @@
+#ATM CUTOFF  %4S%5.2f
+ CA  3.50
+ P   5.00
+

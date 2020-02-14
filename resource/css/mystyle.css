@@ -1,0 +1,54 @@
+body{
+  background-color: #f8f8f8;
+}
+
+/* segment headers */
+body > .content > .page > .segment,
+body > .segment{
+  margin: 0px 0px 3em;
+  padding-top: 70px;
+  padding-bottom: 30px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.main.container{
+  padding-bottom: 100px;
+  margin-top: 50px;
+}
+
+.main.footer{
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  padding-bottom: 1.5rem;
+  width: 100%;
+}
+
+.main.dimmer > .loader{
+  padding: 0;
+  margin: 0;
+  background: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0px;
+  z-index: 1000;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.container{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main.nav > .menu{
+  border-radius: 0;
+}
+
+.main.nav:after{
+  clear: both;
+}

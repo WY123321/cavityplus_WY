@@ -1,0 +1,6 @@
+zap;
+set echo middle center;
+font echo 18 sanserif bold;
+color echo navy;
+echo Molecule loading||It will take a few seconds,|depending on molecule complexity|and your connection speed||Please wait...;
+delay 0.1;

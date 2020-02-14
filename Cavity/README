@@ -1,0 +1,247 @@
+
+			Cavity v1.1 for Linux
+		   An Binding Sites Detection and Estimation Tool.
+			   Written by Yaxia Yuan
+
+=========================================================================================
+
+INTRODUCTION
+==================
+CAVITY is a structure-based protein binding site detection program. Identifying the 
+location of ligand binding sites on a protein is of fundamental importance for a 
+range of applications including molecular docking, de novo drug design, structural 
+identification and comparison of functional sites. It uses the purely geometrical 
+method to find potential ligand binding site, then uses geometrical structure and 
+physical chemistry property information to locate ligand binding sites. CAVITY will 
+provide a maximal ligand binding affinity prediction for the binding site. The most 
+important, CAVITY could define accurate and clear binding site for drug design.
+
+
+SOFTWARE FILES
+==================
+This software can be used on LINUX platform. It is not an open sourced software and 
+user just need to uncompress the software cavity.tar.gz to run the executable
+binary files under the cavity directory. The default executable file was compiled
+under 32-bit system(cavity32), 64-bit system(cavity64), respectively. User may use
+the corresponding file according to your system.
+
+Uncompress:
+        tar -zxf cavity.tar.gz
+
+The software contains the following directories and files:
+ example/		example file directory
+ default/		default presets
+ parameter/		necessary parameter
+ cavity32		32-bit program
+ cavity64		64-bit program
+ cavity.input		default input file templat template
+ COPYING		license
+ README		this file
+
+
+ENVIRONMENT VARIABLES
+==================
+Add the following line into ~/.bashrc or ~/.cshrc or ~/.tcshrc (According to your shell)
+
+ulimit -s unlimited
+
+NOTICE: This would NOT take effect in shells opened so far.
+Please relogin current shell before running CAVITY
+
+
+
+BRIEF TUTORIAL
+==================
+1> Get the target protein structure. 
+Example: download 1DB4 to "example/AA/1db4.pdb"
+
+2> Prepare the input file for CAVITY.
+Example: Editing the "example/cavity-AA.input"
+---------------------------------------------------------------
+   RECEPTOR_FILE	example/AA/1db4.pdb
+---------------------------------------------------------------
+
+3> Run CAVITY
+Example: run under directory "cavity"
+---------------------------------------------------------------
+   ./cavityXX example/cavity-AA.input	(XX is 32 or 64)
+---------------------------------------------------------------
+
+4> View the results and estimate the drugability
+Example: View the output surface "example/AA/1db4_surface_1.pdb"
+---------------------------------------------------------------
+   REMARK   5 Predicted Maximal pKd: XX.XXX
+   REMARK   5 Predicted Average pKd: XX.XXX
+   REMARK   6 DrugScore : XX.XXX
+   REMARK   6 Druggability: XXX
+---------------------------------------------------------------
+Then open "example/AA/1db4_surface_1.pdb" by Pymol
+
+5> Run CAVITY for RNA and DNA detection
+Example: run under directory "cavity"
+---------------------------------------------------------------
+   ./cavityXX example/cavity-RNA.input	(XX is 32 or 64)
+---------------------------------------------------------------
+   ./cavityXX example/cavity-DNA.input	(XX is 32 or 64)
+---------------------------------------------------------------
+View the results files in the same way
+
+
+PARAMETER SETS
+==================
+
+   For convenience, we provide some default parameter sets to adapt different task, 
+user may simply loaded them into your parameter file by the keyword "INCLUDE" . 
+They are under the path "cavity/default/", including 5 default sets:
+---------------------------------------------------------------
+Overall default set:
+   default.input: The overall default parameter set of CAVITY. 
+---------------------------------------------------------------
+Detection mode set: 
+   standard.input: For common binding-site,default.
+   peptide.input: For shallow cavity, e.g.peptide-protein, protein-protein interface.
+   large.input: For large and complex cavity, e.g. large protein-protein interface, 
+multi-function cavity, multi-substrate cavity, channel, nucleic acid site 
+   super.input: For super-sized cavity, e.g. large channel, large polymer interface.
+---------------------------------------------------------------
+Ligand-locate mode set: 
+   locate.input: This parameter will lead to ligand locate mode, and CAVITY will 
+ignore monomers that are far from the ligand or prohibited by user. (Rely on LIGAND_FILE)
+---------------------------------------------------------------
+
+
+
+
+BASIC PARAMETER
+==================
+
+    DETECT_MODE: Detect mode of CAVITY. 0: Whole protein mode, CAVITY will detect 
+the whole protein to find potential binding sites, and this is the default mode. 
+1: Ligand mode, CAVITY will detect around the given Mol2 file. It helps the program 
+do know where the real binding site locates. In most cases, CAVITY could locate 
+the binding site without given ligand coordinates, and you may try this mode if 
+you are dissatisfied with the result from whole protein mode. 2: Area mode, CAVITY 
+will detect the specific space area assigned by user. User may constrain the binding 
+site by this mode to rule out undesired subsite.
+
+    RECEPTOR_FILE: The PDB file presenting the target protein. This file is absolutely 
+necessary to run CAVITY. 
+
+    LIGAND_FILE: The Mol2 file presenting a ligand of the target protein (Needed if 
+DETECT_MODE is 1). It guide CAVITY to define detection boundary, therefore it will 
+be ideal if the size, shape, and location of the ligand is proper. A ligand 
+extracted directly from the complex structure will be just fine.
+
+
+
+ADVANCED PARAMETER
+=================
+---------------------------------------------------------------
+Input Section:
+    PARAMETER_DIRECTORY: The path of the directory "parameter". Under this directory,
+there are force field parameters used by Cavity.
+    MIN/MAX_X/Y/Z: The vertices coordinates of a box constrained the detection space 
+area( Needed if DETECT_MODE is 2)
+    HETMETAL: YES: Metal irons in the protein will be considered, NO: Contrary to 
+YES. Default: YES
+    HETWATER: YES: Water in the protein will be considered, NO: Contrary to YES. 
+Default: No
+---------------------------------------------------------------
+Output Section:
+    OUTPUT_RANK: CavityScore limit. CAVITY will only output detected binding-sites 
+whose CavityScore are greater than the value. User may increase this value to 
+prevent CAVITY outputting useless results.
+---------------------------------------------------------------
+Parameter Section:
+    JUDGE: Detection Method: 0:Surface mode. Detect cavity boundary by geometrical 
+shape of the surface. This mode has some superiority in protein-protein interface 
+detection. 1:Vacant mode. Detect cavity boundary by geometrical shape of volume. 
+This mode has some superiority in large binding-site detection. 2:Detect cavity 
+boundary by geometrical shape of the cavity surface and volume. This mode has some 
+superiority in compact binding-site detection and binding site split. For drug 
+design, the 3rd method always gives the best detection results. For cavity 
+detection only, the 2nd method would be much more robust in detecting various proteins.
+Default: 2.
+    RADIUS_LENTH: The radius of eraser ball (unit: 0.5 ang.). User may increase 
+this radius to detect plane and shallow binding-site, e.g. peptides binding site,
+protein-protein interface.Default: 10
+    SEPARATE_MIN_DEPTH: Default minimal depth of binding-site. Linkage between 
+sub-cavity that do not reach this critical will be cut.
+    SEPARATE_MAX_LIMIT: Default surface area. Increase this value if the real 
+binding site is much larger than the detection result, and vice-versa. (valid when JUDGE is 0)
+    MAX_ABSTRACT_LIMIT: Default abstract surface area. Increase this value if 
+the real binding site is much larger than the detection result, and vice-versa. 
+(valid when JUDGE is 0)
+    MAX_ABSTRACT_DEPTH: Default abstract depth. Increase this value if the real 
+binding site is much larger than the detection result, and vice-versa. (valid 
+when JUDGE is 1 or 2)
+    MAX_DEPTH_VACANT: Default depth estimation parameter. (valid when JUDGE is 1 or 2)
+    MAX_ABSTRACT_LIMIT_V: Default abstract volume. Increase this value if the 
+real binding site is much larger than the detection result, and vice-versa. 
+(valid when JUDGE is 2)
+    SEPARATE_MAX_LIMIT_V: Default volume. Increase this value if the real 
+binding site is much larger than the detection result, and vice-versa. 
+(valid when JUDGE is 2)   
+---------------------------------------------------------------
+
+
+
+
+RESULT ANALYSIS
+==================
+
+The output filenames will be prefixed with the name of the RECEPTOR_FILE 
+and the binding-site number.
+
+CAVITY will output the following visual files for viewing the detection result.
+---------------------------------------------------------------
+    name_surface.pdb:  The output file storing the surface shape of the 
+binding-site and the CavityScore. It is in PDB format, and user can use 
+molecular modeling software to view this file and obtain an insight into 
+the geometrical shape of the binding site. User can view this file by 
+plain text editor, and check the predicted maximal pKd of the binding 
+site. This value indicated the ligandability of the binding site. If 
+it is less than 6.0(Kd is 1uM), suggests that this binding-site may be 
+not a suitable drug design target.
+    name_vacant.pdb: The output file storing the volume shape of the 
+binding-site. It is in PDB format, and user can use molecular modeling 
+software to view this file and obtain an insight into the geometrical 
+shape of the binding site.
+    name_cavity.pdb: The output file storing the atoms forming the 
+binding-site. It is in PDB format, and user can use molecular modeling 
+software to view this file and obtain an insight into the residues of 
+the binding site. It is the visual version of "name_pocket.txt".
+---------------------------------------------------------------
+Notice: Some molecular modeling software may not display these files 
+correctly, please try different software if you could not view the 
+results file. (Pymol is recommended to support these output files.)
+---------------------------------------------------------------
+
+CAVITY will derive the key interaction sites inside the binding site 
+and, based on that, suggest a pharmacophore model. The following 
+files are concerned with this:
+---------------------------------------------------------------
+    name_key_site.pdb: The output file storing the key interaction 
+sites derived inside the binding site. It is in PDB format, in which 
+nitrogen atoms (blue) represent hydrogen-bond donor sites; oxygen atoms 
+(red) represent hydrogen-bond acceptor sites; and carbon atoms (green) 
+represent hydrophobic sites. Users can use any molecular modeling 
+software to view this file and obtain an insight into the 
+characteristics of the binding site.
+    name_pharmacophore.pdb: The output file storing the derived 
+pharmacophore model. It is in PDB format. The definition of key 
+features is the same as the one in "name_key_site.pdb".
+   name_pharmacophore.txt: The output file storing the information 
+of the derived pharmacophore model. It lists the pharmacophore features 
+and the internal distances between them. It also ranks all the features 
+according to their binding scores. Actually, it is the text version 
+of "name_pharmacophore.pdb".
+---------------------------------------------------------------
+
+
+==================================NOTE===================================================
+
+Any questions and problems, please contact the author: yxyuan@mdl.ipc.pku.edu.cn.
+Thanks for your support!
+
+===================================END===================================================

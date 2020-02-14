@@ -1,0 +1,94 @@
+@> 149 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 258 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 130 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 248 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 157 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 188 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 260 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 200 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 179 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 194 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 226 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 196 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 190 atoms and 1 coordinate set(s) were parsed in 0.00s.
+@> 172 atoms and 1 coordinate set(s) were parsed in 0.00s.
+hello 1
+chain A resnum 92
+CYS_A_92 in outKeyResStr
+chain A resnum 215
+CYS_A_215 in outKeyResStr
+chain A resnum 121
+chain A resnum 92
+CYS_A_92 in outKeyResStr
+CYS_A_121 in outKeyResStr
+hi no CYS in this cavity
+hi no CYS in this cavity
+hi no CYS in this cavity
+chain A resnum 32
+CYS_A_32 in outKeyResStr
+hi no CYS in this cavity
+hi no CYS in this cavity
+chain A resnum 231
+CYS_A_231 in outKeyResStr
+chain A resnum 121
+CYS_A_121 in outKeyResStr
+hi no CYS in this cavity
+hi no CYS in this cavity
+hi no CYS in this cavity
+cav Env finished
+    resCavID                 cavityPDB  surfN  hbS  acceptorS  donorS  bindS  \
+0   CYS_A_92   thischains_cavity_6.pdb    601   51        216     308    443   
+1  CYS_A_215   thischains_cavity_1.pdb   1464   53        336     738    908   
+2   CYS_A_92  thischains_cavity_12.pdb    511   76        168     201    364   
+3  CYS_A_121  thischains_cavity_12.pdb    511   76        168     201    364   
+4   CYS_A_32   thischains_cavity_4.pdb   1312  150        318     652    872   
+5  CYS_A_231   thischains_cavity_7.pdb    965   92        215     254    432   
+6  CYS_A_121  thischains_cavity_10.pdb    925   35        179     412    478   
+
+   depS comment  volN    ...     ENV4-THR  ENV4-TYR  ENV4-TRP  ENV4-ILE  \
+0     9       o  1413    ...            2         1         1         1   
+1    16       o  4072    ...            0         1         1         2   
+2     8       o   909    ...            0         1         0         0   
+3     8       o   909    ...            0         1         0         0   
+4    12       o  3440    ...            0         1         0         0   
+5    14       o  2021    ...            0         0         0         2   
+6    10       o  2158    ...            0         0         1         0   
+
+   ENV4-LEU  ENV4-GLY  ENV4-HIS  ENV4-PHE  ENV4-PRO  ENV4-MET  
+0         1         1         1         1         1         1  
+1         0         3         0         0         0         0  
+2         1         1         0         0         2         0  
+3         2         1         0         0         2         1  
+4         0         1         0         2         1         1  
+5         2         1         0         0         1         3  
+6         1         0         1         0         0         2  
+
+[7 rows x 99 columns]
+    resCavID                 cavityPDB  surfN  hbS  acceptorS  donorS  bindS  \
+0   CYS_A_92   thischains_cavity_6.pdb    601   51        216     308    443   
+1  CYS_A_215   thischains_cavity_1.pdb   1464   53        336     738    908   
+2   CYS_A_92  thischains_cavity_12.pdb    511   76        168     201    364   
+3  CYS_A_121  thischains_cavity_12.pdb    511   76        168     201    364   
+4   CYS_A_32   thischains_cavity_4.pdb   1312  150        318     652    872   
+5  CYS_A_231   thischains_cavity_7.pdb    965   92        215     254    432   
+6  CYS_A_121  thischains_cavity_10.pdb    925   35        179     412    478   
+
+   depS comment  volN    ...       ENV2.S    ENV3.S    ENV4.S  ENV1.T  \
+0     9       o  1413    ...     0.000000  0.000000  0.000000   0.125   
+1    16       o  4072    ...     0.181818  0.133333  0.111111   0.000   
+2     8       o   909    ...     0.000000  0.000000  0.000000   0.000   
+3     8       o   909    ...     0.000000  0.071429  0.066667   0.000   
+4    12       o  3440    ...     0.200000  0.100000  0.133333   0.000   
+5    14       o  2021    ...     0.000000  0.000000  0.105263   0.000   
+6    10       o  2158    ...     0.000000  0.000000  0.000000   0.000   
+
+     ENV2.T    ENV3.T    ENV4.T      hbVR      hDVR     lipVR  
+0  0.153846  0.133333  0.117647  0.175513  0.558386  0.210899  
+1  0.000000  0.000000  0.000000  0.074411  0.444990  0.119597  
+2  0.000000  0.000000  0.000000  0.471947  0.424642  0.265127  
+3  0.000000  0.000000  0.000000  0.471947  0.424642  0.265127  
+4  0.000000  0.000000  0.000000  0.144186  0.469186  0.190407  
+5  0.000000  0.000000  0.000000  0.444334  0.313706  0.154379  
+6  0.000000  0.000000  0.000000  0.189991  0.440686  0.227525  
+
+[7 rows x 234 columns]

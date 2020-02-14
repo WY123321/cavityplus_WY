@@ -1,0 +1,10 @@
+resid,resCavID,cavityPDB,cov,Note
+CYS_A_53,CYS_A_206,protein_cavity_3.pdb,Yes,None
+CYS_A_53,CYS_A_206,protein_cavity_11.pdb,No,None
+CYS_A_95,CYS_A_257,protein_cavity_6.pdb,No,None
+CYS_A_130,CYS_A_292,protein_cavity_7.pdb,No,None
+CYS_A_147,CYS_A_309,protein_cavity_7.pdb,No,None
+CYS_A_147,CYS_A_309,protein_cavity_10.pdb,No,None
+CYS_B_228,CYS_B_206,protein_cavity_4.pdb,Yes,None
+CYS_B_305,CYS_B_292,protein_cavity_5.pdb,No,None
+CYS_B_270,CYS_B_257,None,Not determined,Not in a cavity
