@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    let element = $('#div1');
+    let element = $('#div_3dmol');
     let config = {backgroundColor: '#ffffff'};
     var viewer = $3Dmol.createViewer(element, config);
 
     $3Dmol.download("pdb:1UBQ", viewer, {}, function () {
-        console.log("加载");
+        // console.log("加载");
         viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
         viewer.zoomTo();
         viewer.render();
@@ -31,10 +31,10 @@ $(document).ready(function () {
     // )
 
 
-    $("#btn1").click(function () {
-        console.log("改变")
+    $("#PDBEntry_Btn").click(function () {
+        // console.log("改变")
         // console.log($('#pdbid').val())
-        let pdbidstr ='pdb:' +  $('#pdbid').val();
+        let pdbidstr ='pdb:' +  $('#PDBEntry_ID').val();
         console.log(pdbidstr);
         // $('#div1').attr("data-pdb",$('#pdbid').val());
         viewer.clear();
@@ -75,7 +75,7 @@ $(document).ready(function () {
         }
 
     }
-    $("#input1").change(function () {
+    $("#PDBFile_ID").change(function () {
         console.log("文件")
         readText(this, function (data, name) {
             viewer.clear();

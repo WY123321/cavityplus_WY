@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5082427c-75c8-4450-bd9f-b302f16b2bc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computing.php" beforeDir="false" afterPath="$PROJECT_DIR$/computing.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my3Dmol.js" beforeDir="false" afterPath="$PROJECT_DIR$/my3Dmol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdb/1db4.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdb/2amd.pdb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +60,7 @@
       <workItem from="1581687129009" duration="55000" />
       <workItem from="1581688065442" duration="901000" />
       <workItem from="1581689559525" duration="452000" />
-      <workItem from="1581901127795" duration="2266000" />
+      <workItem from="1581901127795" duration="4693000" />
     </task>
     <servers />
   </component>

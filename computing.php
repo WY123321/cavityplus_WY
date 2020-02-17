@@ -39,23 +39,42 @@
 <body>
 <div class="ui padded grid">
     <div class="eleven wide column">
+        <div style="height: 450px; width: 100%; position: relative;" id="div_3dmol"></div>
+
+    </div>
+    <div class="five wide column">
+        <input id="PDBEntry_ID" value="2AMD" size="4">
+        <button id="PDBEntry_Btn">
+            Click it to search
+        </button>
+        <br>
+        <input type="file" id="PDBFile_ID">
+        <br>
+        <a class="ui icon button" href="2amd.pdb"><i class="cloud download icon"></i>Example</a>
+        <br>
+    </div>
+</div>
+
+<div class="ui padded grid">
+    <div class="eleven wide column">
         <div class="ui segment">
             <!--            <div id="mol_3Dmol"></div>-->
-            <div style="height: 400px; width: 100%; position: relative;" id="div1"></div>
 
-<!--            <div style="height: 400px; width: 400px; position: relative;" class='viewer_3Dmoljs' data-pdb='2POR'-->
-<!--                 data-backgroundcolor='0xffffff' data-style='stick' id="div1"></div>-->
-            <!--            <div  style="height: 400px; width: 100%;position: relative;"></div>-->
 
-            <input id="pdbid" value="2AMD" size="4">
-            <button id="btn1">
-                按input里的改变蛋白质
-            </button>
-            <br>
-            <input type="file" id="input1">
-            <br>
+            <!--            <div class="ui inline field">-->
+            <!--                <div class="ui action left icon input">-->
+            <!--                    <div class="ui button" style="background-color: lightskyblue;">InputType</div>-->
+            <!--                    <select class="ui compact dropdown" onchange="selectInputType()" id="typeValue"-->
+            <!--                            name="inputType">-->
+            <!--                        <option value="1">PDBEntry</option>-->
+            <!--                        <option value="2">PDBFile</option>-->
+            <!--                    </select>-->
+            <!---->
+            <!--                </div>-->
+            <!--                <a class="ui icon button" href="2amd.pdb"><i class="cloud download icon"></i>Example</a>-->
+            <!--            </div>-->
 
-            <br>
+
             <div id="mol"></div>
         </div>
 
