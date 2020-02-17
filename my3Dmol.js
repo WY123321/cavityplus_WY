@@ -3,29 +3,32 @@ $(document).ready(function () {
     let config = {backgroundColor: '#ffffff'};
     var viewer = $3Dmol.createViewer(element, config);
 
-    // $3Dmol.download("pdb:1UBQ", viewer, {}, function () {
-    //     console.log("加载")
-    //     viewer.setBackgroundColor("ffffff");
-    //     viewer.render();
-    // });
-    let pdbUri = "./pdb/1db4.pdb"
-    jQuery.ajax(pdbUri, {
-            success: function (data) {
-                console.log("成功")
-                let v = viewer;
-                v.addModel(data, "pdb");
-                v.setStyle({}, {cartoon: {color: 'spectrum'}});
-                v.zoomTo();
-                v.render();
-                v.zoom(1.2, 1000);
-            },
-            error: function (hdr, status, err) {
-                console.log("失败")
-                console.error("Failed to load PDB" + pdbUri + ":" + err);
-
-            }
-        }
-    )
+    $3Dmol.download("pdb:1UBQ", viewer, {}, function () {
+        console.log("加载");
+        viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
+        viewer.zoomTo();
+        viewer.render();
+        viewer.zoom(1.2, 1000);
+        // viewer.render();
+    });
+    // let pdbUri = "./pdb/1db4.pdb"
+    // jQuery.ajax(pdbUri, {
+    //         success: function (data) {
+    //             console.log("成功")
+    //             let v = viewer;
+    //             v.addModel(data, "pdb");
+    //             v.setStyle({}, {cartoon: {color: 'spectrum'}});
+    //             v.zoomTo();
+    //             v.render();
+    //             v.zoom(1.2, 1000);
+    //         },
+    //         error: function (hdr, status, err) {
+    //             console.log("失败")
+    //             console.error("Failed to load PDB" + pdbUri + ":" + err);
+    //
+    //         }
+    //     }
+    // )
 
 
     $("#btn1").click(function () {
@@ -40,8 +43,10 @@ $(document).ready(function () {
             viewer.setBackgroundColor(0xffffffff);
             viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
             // viewer.setStyle({chain:'A'},{cross:{hidden:true}});
-          
+
+            viewer.zoomTo();
             viewer.render();
+            viewer.zoom(1.2, 1000);
         });
 
         // $3Dmol.download('pdb:' + pdbidstr, viewer, {doAssembly: true, noSecondaryStructure: false});
@@ -78,6 +83,7 @@ $(document).ready(function () {
             viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
             viewer.zoomTo();
             viewer.render();
+            viewer.zoom(1.2, 1000);
         });
     });
 });
