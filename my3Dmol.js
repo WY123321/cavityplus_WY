@@ -30,12 +30,34 @@ $(document).ready(function () {
 
     $("#btn1").click(function () {
         console.log("改变")
-        console.log($('#pdbid').val())
-        var pdbidstr = $('#pdbid').val();
+        // console.log($('#pdbid').val())
+        let pdbidstr ='pdb:' +  $('#pdbid').val();
+        console.log(pdbidstr);
         // $('#div1').attr("data-pdb",$('#pdbid').val());
         viewer.clear();
-        $3Dmol.download('pdb:' + pdbidstr, viewer, {doAssembly: true, noSecondaryStructure: false});
+        $3Dmol.download(pdbidstr,viewer,{},function(){
+
+            viewer.setBackgroundColor(0xffffffff);
+            viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
+            // viewer.setStyle({chain:'A'},{cross:{hidden:true}});
+          
+            viewer.render();
+        });
+
+        // $3Dmol.download('pdb:' + pdbidstr, viewer, {doAssembly: true, noSecondaryStructure: false});
+        // viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
+        // viewer.zoomTo();
+        // viewer.render();
+
+
+
+        // viewer.setStyle({cartoon:{colorscheme:{prop:'b',gradient: 'roygb',min:0,max:30}}});
+
+        // viewer.addModel(setStyle({}, { cartoon: {} }));
     });
+
+
+
     let readText = function (input, func) {
         if (input.files.length > 0) {
             let file = input.files[0];
