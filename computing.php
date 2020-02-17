@@ -12,6 +12,7 @@
     <!--    <link href="resource/semancui/semantic.css" rel="stylesheet" type="text/css"/>-->
     <link href="Semantic-UI-CSS-master/semantic.min.css" rel="stylesheet" type="text/css">
     <link href="resource/mystyle.css" rel="stylesheet" type="text/css">
+
     <script src="resource/js/jquery/jquery.js"></script>
     <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
     <!--    <script src="assets/library/iframe.js"></script>-->
@@ -37,6 +38,8 @@
 </head>
 
 <body>
+
+
 <div class="ui padded grid">
     <div class="eleven wide column">
         <div class="ui segment">
@@ -208,8 +211,7 @@
                     <div class="ui inline field">
                         <div class="ui action left icon input">
                             <div class="ui button" style="background-color: lightskyblue;">InputType</div>
-                            <select class="ui compact dropdown" onchange="" id="cavitySelect"
-                                    name="inputType">
+                            <select class="ui compact dropdown" onchange="" id="cavitySelect">
                                 <option value="entry">PDBEntry</option>
                                 <option value="file">PDBFile</option>
                             </select>
@@ -218,18 +220,15 @@
                         <a class="ui icon button" href="2amd.pdb"><i class="cloud download icon"></i>Example</a>
                     </div>
 
-                    <div class="ui hidden divider"></div>
+                    <br>
 
                     <form>
                         <div class="ui input" id="PDBEntry">
-                            <input class="ui mini input" type="text" placeholder="PDB ID: 2amd"
-                                   id="PDBEntry_ID"
+                            <input class="ui mini input" type="text" placeholder="PDB ID: 2amd" id="PDBEntry_ID"
                                    onkeyup="value=value.replace(/[\W]/g,'');value=value.toUpperCase();"
-                                   onpaste="return false"
-                                   maxlength="4">
+                                   onpaste="return false" maxlength="4">
                             <button class="ui mini icon button" style="background-color: lightskyblue;"
-                                    id="PDBEntry_Btn"
-                                    type="button"><i class="search icon"></i>Click it to search
+                                    id="PDBEntry_Btn" type="button"><i class="search icon"></i>Click it to search
                             </button>
                         </div>
                         <div id="showloading"></div>
@@ -237,15 +236,13 @@
                         <div class="ui mini input" id="PDBFile" style="display: none">
                             <label>
                                 <div class="ui mini icon button"> Protein input (*.pdb)</div>
-                                <input type="file" name="file" id="PDBFile_ID"/></label>
-
+                                <input type="file" id="PDBFile_ID" accept=".pdb"/>
+                            </label>
                         </div>
+
+
                     </form>
 
-                    <!--                    onkeyup="value=value.replace(/[\W]/g,'');value=value.toUpperCase();"-->
-                    <!--                    onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\W]/g,''))"-->
-
-                    <!--                    <div class="ui hidden hidden divider"></div>-->
                     <!--                    <form method="post" id="cavityForm" enctype="multipart/form-data">-->
                     <!--                        <div class="ui input">-->
                     <!--                            <a class="ui label" id="selectchains"-->
