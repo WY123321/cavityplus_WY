@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/computing.php" beforeDir="false" afterPath="$PROJECT_DIR$/computing.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my3Dmol.js" beforeDir="false" afterPath="$PROJECT_DIR$/my3Dmol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdb/1db4.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdb/2amd.pdb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/cavityplus_v0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="SvnConfiguration">
@@ -60,7 +58,7 @@
       <workItem from="1581687129009" duration="55000" />
       <workItem from="1581688065442" duration="901000" />
       <workItem from="1581689559525" duration="452000" />
-      <workItem from="1581901127795" duration="4693000" />
+      <workItem from="1581901127795" duration="10880000" />
     </task>
     <servers />
   </component>
@@ -72,10 +70,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="452" y="0" key="#PHP/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1581644535444" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1581659030980">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1581907141398">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1581659030980" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1581907141398" />
     <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1581901128715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

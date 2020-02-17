@@ -1,4 +1,34 @@
 $(document).ready(function () {
+    $("#cavitySelect").change(function () {
+        let type=$("#cavitySelect").val();
+        if (type == "entry") {
+            $("#PDBEntry").show();
+            $("#PDBFile").hide();
+        }
+        if (type == "file") {
+            $("#PDBEntry").hide();
+            $("#PDBFile").show();
+        }
+        console.log(type);
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     let element = $('#div_3dmol');
     let config = {backgroundColor: '#ffffff'};
     var viewer = $3Dmol.createViewer(element, config);
