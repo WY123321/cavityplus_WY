@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Corrsite</title>
-    <script type="text/javascript" src="resource/js/jsmol/JSmol.min.js"></script>
+    <!--    <script type="text/javascript" src="resource/js/jsmol/JSmol.min.js"></script>-->
 
 
     <!--<link href="resource/css/select.css" rel="stylesheet" type="text/css"/>-->
@@ -29,7 +29,7 @@
     <script type="text/javascript" src="resource/js/3Dmol/3Dmol-min.js"></script>
     <!--    <script type="text/javascript" src="http://162.105.160.28:80/cavity/resource/js/jscolor/jscolor.js"></script>-->
     <script type="text/javascript" src="my3Dmol.js"></script>
-    <script type="text/javascript" src="myJSscript.js"></script>
+    <!--    <script type="text/javascript" src="myJSscript.js"></script>-->
 
     <?php
     session_start();
@@ -49,7 +49,9 @@
 
         <div>
             <div class="ui styled fluid accordion" id="result_accordion_module">
-                <div class="title" id="CavityResulttilte"><i class="dropdown icon"></i> Cavity Results</div>
+                <div class="title" id="CavityResulttilte">
+                    <i class="dropdown icon"></i> Cavity Results
+                </div>
                 <div class="content" id="CavityResultcont">
                     <form id="cavityresultform">
                         <div class="ui container" id="entry3" style="display: none;">
@@ -99,6 +101,7 @@
 
 
                 </div>
+
                 <div class="title" id="PocketResulttilte">
                     <i class="dropdown icon"></i> CavPharmer Results
                 </div>
@@ -114,6 +117,7 @@
 
 
                 </div>
+
                 <div class="title" id="CorrsiteResulttitle">
                     <i class="dropdown icon"></i> CorrSite Results
                 </div>
@@ -238,8 +242,6 @@
                                 <input type="file" id="PDBFile_ID" accept=".pdb"/>
                             </label>
                         </div>
-
-
                     </form>
 
                     <!--                    <form method="post" id="cavityForm" enctype="multipart/form-data">-->

@@ -6,9 +6,11 @@ $(document).ready(function () {
     let CovCysContentShow = 1;
     $("#cavityTitle").click(function () {
             if (cavityContentShow == 0) {
+                $('#cavityTitle').removeClass('active');
                 $('#cavityContent').removeClass('active');
                 cavityContentShow = 1;
             } else if (cavityContentShow == 1) {
+                $('#cavityTitle').addClass('active');
                 $('#cavityContent').addClass('active');
                 cavityContentShow = 0;
             } else {
@@ -18,9 +20,11 @@ $(document).ready(function () {
     )
     $("#cavPharmerTitle").click(function () {
             if (CavPharmerContentShow == 0) {
+                $('#cavPharmerTitle').removeClass('active');
                 $('#cavPharmerContent').removeClass('active');
                 CavPharmerContentShow = 1;
             } else if (CavPharmerContentShow == 1) {
+                $('#cavPharmerTitle').addClass('active');
                 $('#cavPharmerContent').addClass('active');
                 CavPharmerContentShow = 0;
             } else {
@@ -30,9 +34,11 @@ $(document).ready(function () {
     )
     $("#corrSiteTitle").click(function () {
             if (CorSiteContentShow == 0) {
+                $('#corrSiteTitle').removeClass('active');
                 $('#corrSiteContent').removeClass('active');
                 CorSiteContentShow = 1;
             } else if (CorSiteContentShow == 1) {
+                $('#corrSiteTitle').addClass('active');
                 $('#corrSiteContent').addClass('active');
                 CorSiteContentShow = 0;
             } else {
@@ -42,9 +48,11 @@ $(document).ready(function () {
     )
     $("#covCysTitle").click(function () {
             if (CovCysContentShow == 0) {
+                $('#covCysTitle').removeClass('active');
                 $('#covCysContent').removeClass('active');
                 CovCysContentShow = 1;
             } else if (CovCysContentShow == 1) {
+                $('#covCysTitle').addClass('active');
                 $('#covCysContent').addClass('active');
                 CovCysContentShow = 0;
             } else {
