@@ -1,15 +1,14 @@
 $(document).ready(function () {
 
     let cavityContentShow = 0;
-    let CavPharmerContentShow = 0;
-    let CorSiteContentShow = 0;
-    let CovCysContentShow = 0;
+    let CavPharmerContentShow = 1;
+    let CorSiteContentShow = 1;
+    let CovCysContentShow = 1;
     $("#cavityTitle").click(function () {
             if (cavityContentShow == 0) {
                 $('#cavityContent').removeClass('active');
                 cavityContentShow = 1;
             } else if (cavityContentShow == 1) {
-
                 $('#cavityContent').addClass('active');
                 cavityContentShow = 0;
             } else {
@@ -17,7 +16,42 @@ $(document).ready(function () {
             }
         }
     )
-
+    $("#cavPharmerTitle").click(function () {
+            if (CavPharmerContentShow == 0) {
+                $('#cavPharmerContent').removeClass('active');
+                CavPharmerContentShow = 1;
+            } else if (CavPharmerContentShow == 1) {
+                $('#cavPharmerContent').addClass('active');
+                CavPharmerContentShow = 0;
+            } else {
+                console.log(error)
+            }
+        }
+    )
+    $("#corrSiteTitle").click(function () {
+            if (CorSiteContentShow == 0) {
+                $('#corrSiteContent').removeClass('active');
+                CorSiteContentShow = 1;
+            } else if (CorSiteContentShow == 1) {
+                $('#corrSiteContent').addClass('active');
+                CorSiteContentShow = 0;
+            } else {
+                console.log(error)
+            }
+        }
+    )
+    $("#covCysTitle").click(function () {
+            if (CovCysContentShow == 0) {
+                $('#covCysContent').removeClass('active');
+                CovCysContentShow = 1;
+            } else if (CovCysContentShow == 1) {
+                $('#covCysContent').addClass('active');
+                CovCysContentShow = 0;
+            } else {
+                console.log(error)
+            }
+        }
+    )
     $("#cavitySelect").change(function () {
         let type = $("#cavitySelect").val();
         if (type == "entry") {
@@ -31,7 +65,7 @@ $(document).ready(function () {
     })
 
 
-    let element = $('#div_3dmol');
+    let element = $('#div_mol');
     let config = {backgroundColor: '#ffffff'};
     let viewer = $3Dmol.createViewer(element, config);
 
