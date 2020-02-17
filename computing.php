@@ -243,140 +243,141 @@
                             </label>
                         </div>
                     </form>
+                    <br>
 
-                    <!--                    <form method="post" id="cavityForm" enctype="multipart/form-data">-->
-                    <!--                        <div class="ui input">-->
-                    <!--                            <a class="ui label" id="selectchains"-->
-                    <!--                               style="text-align: center; background-color: lightskyblue">Chain(s)</a>-->
-                    <!--                            <div id="content"></div>-->
-                    <!--                        </div>-->
-                    <!---->
-                    <!--                        <div class="ui hidden hidden divider"></div>-->
-                    <!--                        <div class="ui input" id="mode">-->
-                    <!--                            <div class="ui text">-->
-                    <!--                                <div>-->
-                    <!--                                    <span style="width: 80px;"><strong>Mode</strong></span>-->
-                    <!--                                    <span class="help-tip">-->
-                    <!--                                 <p>Ligand file should be uploaded if the mode is "With Ligand".</p>-->
-                    <!--                                </span>-->
-                    <!--                                    <input value="0" id="cmode-1" type="radio" name="cmode" checked="checked"-->
-                    <!--                                           onclick="selectCavityMode()"/>-->
-                    <!--                                    <label for="cmode-1">No Ligand</label>-->
-                    <!--                                    <input value="1" id="cmode-2" type="radio" name="cmode"-->
-                    <!--                                           onclick="selectCavityMode()">-->
-                    <!--                                    <label for="cmode-2">With Ligand</label>-->
-                    <!---->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!---->
-                    <!--                        </div>-->
-                    <!--                        <div class="ui hidden hidden divider"></div>-->
-                    <!---->
-                    <!--                        <div id="Cligfile" style="display: none">-->
-                    <!--                            <div class="ui mini input">-->
-                    <!--                                <div class="ui mini icon button">Ligand(s)</div>-->
-                    <!--                                <div id="curligand_content">-->
-                    <!--                                     js show the contant -->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!---->
-                    <!--                            <div class="ui hidden hidden divider">OR</div>-->
-                    <!---->
-                    <!--                            <label>-->
-                    <!--                                <div class="ui mini icon button">Ligand input (*.mol2)</div>-->
-                    <!--                                <input class="ui mini input" type="file" name="ligfile" id="ligandFile"/>-->
-                    <!--                            </label>-->
-                    <!--                        </div>-->
-                    <!---->
-                    <!---->
-                    <!--                        <div class="accordion">-->
-                    <!--                            <div class="title">-->
-                    <!--                                <i class="dropdown icon"></i> Advanced parameters-->
-                    <!--                            </div>-->
-                    <!--                            <div class="content">-->
-                    <!--                                <div class="ui labeled input">-->
-                    <!--                                    <div class="ui label"-->
-                    <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
-                    <!--                                        SEPARATE_MIN_DEPTH-->
-                    <!--                                        <span class="help-tip"><p>Default minimal depth of binding-site. Linkage between sub-cavity that do not reach this critical will be cut.</p></span>-->
-                    <!--                                    </div>-->
-                    <!--                                    <input id="SMD" name="SMD" value="8" type="text" class="size" size="4"-->
-                    <!--                                           style="text-align: right;">-->
-                    <!--                                    <div class="ui basic label" style="border: none;">Å</div>-->
-                    <!--                                </div>-->
-                    <!---->
-                    <!--                                <div class="ui labeled input">-->
-                    <!--                                    <div class="ui label"-->
-                    <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
-                    <!--                                        MAX_ABSTRACT_LIMIT-->
-                    <!--                                        <span class="help-tip"><p>Default abstract surface area. Increase this value if the real binding site is much larger than the detection result, and vice-versa.</p></span>-->
-                    <!--                                    </div>-->
-                    <!--                                    <input id="MAL" name="MAL" value="1500" type="text" class="active" size="4"-->
-                    <!--                                           style="text-align: right;">-->
-                    <!--                                    <div class="ui basic label" style="border: none;">Å<sup>3</sup></div>-->
-                    <!--                                </div>-->
-                    <!---->
-                    <!---->
-                    <!--                                <div class="ui labeled input">-->
-                    <!--                                    <div class="ui label"-->
-                    <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
-                    <!--                                        SEPARATE_MAX_LIMIT-->
-                    <!--                                        <span class="help-tip"><p>Default surface area. Increase this value if the real binding site is much larger than the detection result, and vice-versa.</p></span>-->
-                    <!--                                    </div>-->
-                    <!--                                    <input id="SML" name="SML" value="6000" type="text" class="active" size="4"-->
-                    <!--                                           style="text-align: right;">-->
-                    <!--                                    <div class="ui basic label" style="border: none;">Å<sup>3</sup></div>-->
-                    <!--                                </div>-->
-                    <!---->
-                    <!--                                <div class="ui labeled input">-->
-                    <!--                                    <div class="ui label"-->
-                    <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
-                    <!--                                        MIN_ABSTRACT_DEPTH-->
-                    <!--                                        <span class="help-tip"><p>Default abstract depth. Increase this value if the real binding site is much larger than the detection result, and vice-versa.</p></span>-->
-                    <!--                                    </div>-->
-                    <!--                                    <input id="MAD" name="MAD" value="2" type="text" class="active" size="4"-->
-                    <!--                                           style="text-align: right;">-->
-                    <!--                                    <div class="ui basic label" style="border: none;">Å</div>-->
-                    <!--                                </div>-->
-                    <!--                                <div class="ui labeled input">-->
-                    <!--                                    <div class="ui label"-->
-                    <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
-                    <!--                                        RULER_1-->
-                    <!--                                        <span class="help-tip"><p>Limt the minimum volume.</p></span><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.125×</label>-->
-                    <!--                                    </div>-->
-                    <!--                                    <input id="R1" name="R1" value="100" type="text" class="active" size="4"-->
-                    <!--                                           style="text-align: right;">-->
-                    <!--                                    <div class="ui basic label" style="border: none;">Å<sup>3</sup></div>-->
-                    <!--                                </div>-->
-                    <!--                                <div class="ui labeled input">-->
-                    <!--                                    <div class="ui label"-->
-                    <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
-                    <!--                                        OUTPUT_RANK-->
-                    <!--                                        <span class="help-tip"><p>Limit the minimum score.</p></span></div>-->
-                    <!--                                    <input id="OR" name="OR" value="1.5" type="text" class="active" size="4"-->
-                    <!--                                           style="text-align: right;">-->
-                    <!--                                    <div class="basic label"></div>-->
-                    <!--                                </div>-->
-                    <!---->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="ui hidden hidden divider"></div>-->
-                    <!--                        <div style="text-align: center;" id="subcavop">-->
-                    <!--                            <button class="ui button" type="submit" id="submitCavity"-->
-                    <!--                                    style="background-color: lightskyblue;">-->
-                    <!--                                Submit-->
-                    <!--                            </button>-->
-                    <!---->
-                    <!--                            <div class="ui active inline loader" id="cavityrunningshow">Running Cavity...</div>-->
-                    <!--                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-                    <!--                            <button class="ui button" id="checkcavitybar" style="display: none;">-->
-                    <!--                                Check-->
-                    <!--                            </button>-->
-                    <!--                            <div class="ui hidden hidden divider"></div>-->
-                    <!--                            <div id="timerapp"></div>-->
-                    <!--                        </div>-->
-                    <!---->
-                    <!--                    </form>-->
+                    <form method="post" id="cavityForm" enctype="multipart/form-data">
+                        <div class="ui input">
+                            <span class="ui label" id="selectchains"
+                               style="text-align: center; background-color: lightskyblue">Chain(s)</span>
+                            <div id="content"></div>
+                        </div>
+                        <!--下面没看懂呢-->
+                        <br>
+                        <!--                        <div class="ui input" id="mode">-->
+                        <!--                            <div class="ui text">-->
+                        <!--                                <div>-->
+                        <!--                                    <span style="width: 80px;"><strong>Mode</strong></span>-->
+                        <!--                                    <span class="help-tip">-->
+                        <!--                                                     <p>Ligand file should be uploaded if the mode is "With Ligand".</p>-->
+                        <!--                                                    </span>-->
+                        <!--                                    <input value="0" id="cmode-1" type="radio" name="cmode" checked="checked"-->
+                        <!--                                           onclick="selectCavityMode()"/>-->
+                        <!--                                    <label for="cmode-1">No Ligand</label>-->
+                        <!--                                    <input value="1" id="cmode-2" type="radio" name="cmode"-->
+                        <!--                                           onclick="selectCavityMode()">-->
+                        <!--                                    <label for="cmode-2">With Ligand</label>-->
+                        <!---->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!---->
+                        <!--                        </div>-->
+                        <br>
+
+                        <!--                        <div id="Cligfile" style="display: none">-->
+                        <!--                            <div class="ui mini input">-->
+                        <!--                                <div class="ui mini icon button">Ligand(s)</div>-->
+                        <!--                                <div id="curligand_content">-->
+                        <!--                                    js show the contant-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!---->
+                        <!--                            <div class="ui hidden hidden divider">OR</div>-->
+                        <!---->
+                        <!--                            <label>-->
+                        <!--                                <div class="ui mini icon button">Ligand input (*.mol2)</div>-->
+                        <!--                                <input class="ui mini input" type="file" name="ligfile" id="ligandFile"/>-->
+                        <!--                            </label>-->
+                        <!--                        </div>-->
+
+
+                        <!--                        <div class="accordion">-->
+                        <!--                            <div class="title">-->
+                        <!--                                <i class="dropdown icon"></i> Advanced parameters-->
+                        <!--                            </div>-->
+                        <!--                            <div class="content">-->
+                        <!--                                <div class="ui labeled input">-->
+                        <!--                                    <div class="ui label"-->
+                        <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
+                        <!--                                        SEPARATE_MIN_DEPTH-->
+                        <!--                                        <span class="help-tip"><p>Default minimal depth of binding-site. Linkage between sub-cavity that do not reach this critical will be cut.</p></span>-->
+                        <!--                                    </div>-->
+                        <!--                                    <input id="SMD" name="SMD" value="8" type="text" class="size" size="4"-->
+                        <!--                                           style="text-align: right;">-->
+                        <!--                                    <div class="ui basic label" style="border: none;">Å</div>-->
+                        <!--                                </div>-->
+                        <!---->
+                        <!--                                <div class="ui labeled input">-->
+                        <!--                                    <div class="ui label"-->
+                        <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
+                        <!--                                        MAX_ABSTRACT_LIMIT-->
+                        <!--                                        <span class="help-tip"><p>Default abstract surface area. Increase this value if the real binding site is much larger than the detection result, and vice-versa.</p></span>-->
+                        <!--                                    </div>-->
+                        <!--                                    <input id="MAL" name="MAL" value="1500" type="text" class="active" size="4"-->
+                        <!--                                           style="text-align: right;">-->
+                        <!--                                    <div class="ui basic label" style="border: none;">Å<sup>3</sup></div>-->
+                        <!--                                </div>-->
+                        <!---->
+                        <!---->
+                        <!--                                <div class="ui labeled input">-->
+                        <!--                                    <div class="ui label"-->
+                        <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
+                        <!--                                        SEPARATE_MAX_LIMIT-->
+                        <!--                                        <span class="help-tip"><p>Default surface area. Increase this value if the real binding site is much larger than the detection result, and vice-versa.</p></span>-->
+                        <!--                                    </div>-->
+                        <!--                                    <input id="SML" name="SML" value="6000" type="text" class="active" size="4"-->
+                        <!--                                           style="text-align: right;">-->
+                        <!--                                    <div class="ui basic label" style="border: none;">Å<sup>3</sup></div>-->
+                        <!--                                </div>-->
+                        <!---->
+                        <!--                                <div class="ui labeled input">-->
+                        <!--                                    <div class="ui label"-->
+                        <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
+                        <!--                                        MIN_ABSTRACT_DEPTH-->
+                        <!--                                        <span class="help-tip"><p>Default abstract depth. Increase this value if the real binding site is much larger than the detection result, and vice-versa.</p></span>-->
+                        <!--                                    </div>-->
+                        <!--                                    <input id="MAD" name="MAD" value="2" type="text" class="active" size="4"-->
+                        <!--                                           style="text-align: right;">-->
+                        <!--                                    <div class="ui basic label" style="border: none;">Å</div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="ui labeled input">-->
+                        <!--                                    <div class="ui label"-->
+                        <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
+                        <!--                                        RULER_1-->
+                        <!--                                        <span class="help-tip"><p>Limt the minimum volume.</p></span><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.125×</label>-->
+                        <!--                                    </div>-->
+                        <!--                                    <input id="R1" name="R1" value="100" type="text" class="active" size="4"-->
+                        <!--                                           style="text-align: right;">-->
+                        <!--                                    <div class="ui basic label" style="border: none;">Å<sup>3</sup></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="ui labeled input">-->
+                        <!--                                    <div class="ui label"-->
+                        <!--                                         style="font-size: 10px;color: black;background-color: whitesmoke;width: 153px;">-->
+                        <!--                                        OUTPUT_RANK-->
+                        <!--                                        <span class="help-tip"><p>Limit the minimum score.</p></span></div>-->
+                        <!--                                    <input id="OR" name="OR" value="1.5" type="text" class="active" size="4"-->
+                        <!--                                           style="text-align: right;">-->
+                        <!--                                    <div class="basic label"></div>-->
+                        <!--                                </div>-->
+                        <!---->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                        <br>-->
+                        <!--                        <div style="text-align: center;" id="subcavop">-->
+                        <!--                            <button class="ui button" type="submit" id="submitCavity"-->
+                        <!--                                    style="background-color: lightskyblue;">-->
+                        <!--                                Submit-->
+                        <!--                            </button>-->
+                        <!---->
+                        <!--                            <div class="ui active inline loader" id="cavityrunningshow">Running Cavity...</div>-->
+                        <!--                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                        <!--                            <button class="ui button" id="checkcavitybar" style="display: none;">-->
+                        <!--                                Check-->
+                        <!--                            </button>-->
+                        <!--                            <div class="ui hidden hidden divider"></div>-->
+                        <!--                            <div id="timerapp"></div>-->
+                        <!--                        </div>-->
+
+                    </form>
 
 
                 </div>

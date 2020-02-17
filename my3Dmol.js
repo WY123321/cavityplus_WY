@@ -78,7 +78,7 @@ $(document).ready(function () {
     let viewer = $3Dmol.createViewer(element, config);
 
     $3Dmol.download("pdb:1UBQ", viewer, {}, function () {
-        viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
+        viewer.setStyle({}, {cartoon: {color: 'spectrum'}})
         viewer.zoomTo();
         viewer.render();
         viewer.zoom(1.2, 1000);
