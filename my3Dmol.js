@@ -4,6 +4,7 @@ $(document).ready(function () {
     let CavPharmerContentShow = 1;
     let CorSiteContentShow = 1;
     let CovCysContentShow = 1;
+    let advancedContentShow = 1;
     $("#cavityTitle").click(function () {
             if (cavityContentShow == 0) {
                 $('#cavityTitle').removeClass('active');
@@ -60,6 +61,21 @@ $(document).ready(function () {
             }
         }
     )
+    $("#advancedTitle").click(function () {
+            if (advancedContentShow == 0) {
+                $('#advancedTitle').removeClass('active');
+                $('#advancedContent').removeClass('active');
+                advancedContentShow = 1;
+            } else if (advancedContentShow == 1) {
+                $('#advancedTitle').addClass('active');
+                $('#advancedContent').addClass('active');
+                advancedContentShow = 0;
+            } else {
+                console.log(error)
+            }
+        }
+    )
+
     $("#cavitySelect").change(function () {
         let type = $("#cavitySelect").val();
         if (type == "entry") {
@@ -72,6 +88,14 @@ $(document).ready(function () {
         }
     })
 
+    
+    $("#cmode_1").change(function () {
+            $("#cligFile").hide();
+    })
+
+    $("#cmode_2").change(function () {
+            $("#cligFile").show();
+    })
 
     let element = $('#div_mol');
     let config = {backgroundColor: '#ffffff'};
@@ -103,7 +127,6 @@ $(document).ready(function () {
 //         }
 //     }
 // )
-
 
     $("#PDBEntry_Btn").click(function () {
         let pdbidstr = 'pdb:' + $('#PDBEntry_ID').val();
