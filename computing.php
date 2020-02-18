@@ -262,9 +262,9 @@
                                     <span class="help-tip">
                                         <p>Ligand file should be uploaded if the mode is "With Ligand".</p>
                                     </span>
-                                    <input  id="cmode_1" type="radio" name="mode" checked="checked"/>
+                                    <input id="cmode_1" type="radio" name="mode" checked="checked"/>
                                     <label for="cmode_1">No Ligand</label>
-                                    <input  id="cmode_2" type="radio" name="mode">
+                                    <input id="cmode_2" type="radio" name="mode">
                                     <label for="cmode_2">With Ligand</label>
 
                                 </div>

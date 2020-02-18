@@ -88,13 +88,13 @@ $(document).ready(function () {
         }
     })
 
-    
+
     $("#cmode_1").change(function () {
-            $("#cligFile").hide();
+        $("#cligFile").hide();
     })
 
     $("#cmode_2").change(function () {
-            $("#cligFile").show();
+        $("#cligFile").show();
     })
 
     let element = $('#div_mol');
@@ -102,7 +102,10 @@ $(document).ready(function () {
     let viewer = $3Dmol.createViewer(element, config);
 
     $3Dmol.download("pdb:1UBQ", viewer, {}, function () {
+
         viewer.setStyle({}, {cartoon: {color: 'spectrum'}})
+        chainsOperation(viewer);
+
         viewer.zoomTo();
         viewer.render();
         viewer.zoom(1.2, 1000);
@@ -135,8 +138,13 @@ $(document).ready(function () {
         $3Dmol.download(pdbidstr, viewer, {}, function () {
 
             viewer.setBackgroundColor(0xffffffff);
+
             viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
-            // viewer.setStyle({chain:'A'},{cross:{hidden:true}});
+
+            // viewer.setStyle({chain: 'B'}, {cartoon: {hidden: true}});
+            // viewer.setStyle({chain: 'B'}, {cartoon: {color: 'spectrum'}});
+
+            chainsOperation(viewer);
 
             viewer.zoomTo();
             viewer.render();
@@ -144,6 +152,50 @@ $(document).ready(function () {
         });
     });
 
+
+    function chainsOperation(viewer) {
+        let chains_all = [];
+        let chains = [];
+        let atoms = viewer.selectedAtoms();
+        for (let i = 0; i < atoms.length; i++) {
+            chains_all.push(atoms[i].chain);
+        }
+
+        for (let i = 0; i < chains_all.length; i++) {
+            let items = chains_all[i];
+            if ($.inArray(items, chains) == -1) {
+                chains.push(items);
+            }
+        }
+        let chainContent = ''
+        for (let i = 0; i < chains.length; i++) {
+            let chainId = "checkbox_" + chains[i];
+
+            let contentTemp = '<div class="ui checkbox"><input class="group1" tabindex="0" type="checkbox" name="chain" id="' + chainId + '" checked="checked" value="' + chains[i] + '"> <label for="' + chainId + '">' + chains[i] + ' &nbsp;&nbsp;&nbsp;&nbsp;</label></div>'
+            chainContent += contentTemp;
+        }
+        $("#content").html(chainContent);
+        for (let i = 0; i < chains.length; i++) {
+            let chainId = "#checkbox_" + chains[i];
+            $(chainId).click(function () {
+                console.log(chainId)
+                console.log($(chainId).is('checked'))
+
+                if ($(chainId).is('checked') === false) {
+                    viewer.setStyle({chain: chains[i]}, {cartoon: {hidden: true}});
+                    viewer.zoomTo();
+                    viewer.render();
+                    viewer.zoom(1.2, 0);
+                } else {
+                    viewer.setStyle({chain: chains[i]}, {cartoon: {color: 'spectrum'}});
+                    viewer.zoomTo();
+                    viewer.render();
+                    viewer.zoom(1.2, 0);
+                }
+            })
+        }
+
+    }
 
     let readText = function (input, func) {
         if (input.files.length > 0) {
@@ -161,6 +213,7 @@ $(document).ready(function () {
             viewer.clear();
             viewer.addModel(data, name);
             viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
+            chainsOperation(viewer);
             viewer.zoomTo();
             viewer.render();
             viewer.zoom(1.2, 1000);
