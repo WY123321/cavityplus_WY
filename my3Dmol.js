@@ -1,10 +1,13 @@
 $(document).ready(function () {
 
+
     let cavityContentShow = 0;
     let CavPharmerContentShow = 1;
     let CorSiteContentShow = 1;
     let CovCysContentShow = 1;
     let advancedContentShow = 1;
+    let chainsCheckbox=[];
+
     $("#cavityTitle").click(function () {
             if (cavityContentShow == 0) {
                 $('#cavityTitle').removeClass('active');
@@ -105,7 +108,6 @@ $(document).ready(function () {
 
         viewer.setStyle({}, {cartoon: {color: 'spectrum'}})
         chainsOperation(viewer);
-
         viewer.zoomTo();
         viewer.render();
         viewer.zoom(1.2, 1000);
@@ -157,6 +159,7 @@ $(document).ready(function () {
         let chains_all = [];
         let chains = [];
         let atoms = viewer.selectedAtoms();
+        console.log(atoms)
         for (let i = 0; i < atoms.length; i++) {
             chains_all.push(atoms[i].chain);
         }
@@ -165,28 +168,43 @@ $(document).ready(function () {
             let items = chains_all[i];
             if ($.inArray(items, chains) == -1) {
                 chains.push(items);
+
             }
         }
+
+
+
+
         let chainContent = ''
+        chainsCheckbox=[];
         for (let i = 0; i < chains.length; i++) {
             let chainId = "checkbox_" + chains[i];
-
+            chainsCheckbox.push('1_'+chains[i])
             let contentTemp = '<div class="ui checkbox"><input class="group1" tabindex="0" type="checkbox" name="chain" id="' + chainId + '" checked="checked" value="' + chains[i] + '"> <label for="' + chainId + '">' + chains[i] + ' &nbsp;&nbsp;&nbsp;&nbsp;</label></div>'
             chainContent += contentTemp;
         }
+        // console.log(chainsCheckbox);
         $("#content").html(chainContent);
+
+
         for (let i = 0; i < chains.length; i++) {
             let chainId = "#checkbox_" + chains[i];
             $(chainId).click(function () {
-                console.log(chainId)
-                console.log($(chainId).is('checked'))
+                // console.log(chains[i])
+                // console.log($(chainId).is('checked'))
 
-                if ($(chainId).is('checked') === false) {
+
+                if (chainsCheckbox[i].substr(0,1) == 1) {
+
+                    chainsCheckbox[i]='0'+chainsCheckbox[i].substr(1);
+                    // console.log(chainsCheckbox[i])
                     viewer.setStyle({chain: chains[i]}, {cartoon: {hidden: true}});
                     viewer.zoomTo();
                     viewer.render();
                     viewer.zoom(1.2, 0);
                 } else {
+                    chainsCheckbox[i]='1'+chainsCheckbox[i].substr(1);
+                    // console.log(chainsCheckbox[i])
                     viewer.setStyle({chain: chains[i]}, {cartoon: {color: 'spectrum'}});
                     viewer.zoomTo();
                     viewer.render();
