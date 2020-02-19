@@ -220,7 +220,7 @@
             cmd_selectchains1 = 'select (' + check_val.join() + ') and hetero and (not water); write PDB';
             var selected_ligand = Jmol.scriptWaitAsArray(myJmol, cmd_selectchains1)[0][0][3];
             var tmp = get_ligandsets_html_fromPDB(selected_ligand, "Cavity_dropdown");
-            var tmp1 = get_ligandsets_html_fromPDB(selected_ligand, "CavPharmer_dropdown");
+            var tmp1 = curligand_content(selected_ligand, "CavPharmer_dropdown");
 
             $('#curligand_content').html("");
             $('#curligand_content').html(tmp);

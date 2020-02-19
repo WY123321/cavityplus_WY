@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-
+    let defaultModel = "1UBQ";
     let cavityContentShow = 0;
     let CavPharmerContentShow = 1;
     let CorSiteContentShow = 1;
     let CovCysContentShow = 1;
     let advancedContentShow = 1;
-    let chainsCheckbox=[];
+    let chainsCheckbox = [];
 
     $("#cavityTitle").click(function () {
             if (cavityContentShow == 0) {
@@ -103,9 +103,9 @@ $(document).ready(function () {
     let element = $('#div_mol');
     let config = {backgroundColor: '#ffffff'};
     let viewer = $3Dmol.createViewer(element, config);
+    $("#PDBEntry_ID").attr("name", defaultModel);
 
-    $3Dmol.download("pdb:1UBQ", viewer, {}, function () {
-
+    $3Dmol.download("pdb:" + defaultModel, viewer, {}, function () {
         viewer.setStyle({}, {cartoon: {color: 'spectrum'}})
         chainsOperation(viewer);
         viewer.zoomTo();
@@ -135,6 +135,9 @@ $(document).ready(function () {
 
     $("#PDBEntry_Btn").click(function () {
         let pdbidstr = 'pdb:' + $('#PDBEntry_ID').val();
+
+        $("#PDBEntry_ID").attr("name", $('#PDBEntry_ID').val());
+
         // console.log(pdbidstr);
         viewer.clear();
         $3Dmol.download(pdbidstr, viewer, {}, function () {
@@ -156,6 +159,25 @@ $(document).ready(function () {
 
 
     function chainsOperation(viewer) {
+        let pdbName = $("#PDBEntry_ID").attr("name")
+        var sel = $('#pdbligand').empty();
+        $.get('https://www.rcsb.org/pdb/rest/ligandInfo?structureId=' + pdbName).done(function (ret) {
+            var ligands = $(ret).find('ligand');
+            sel.empty();
+            $("#pdbligand").append('  <option  selected="selected" value="0">none</option>');
+            $.each(ligands, function (k, v) {
+                var lname = $(v).attr('chemicalID');
+                console.log(lname)
+                $('<option value="' + lname + '">' + lname + "</option>").appendTo(sel);
+            });
+            if (ligands.length > 0) {
+                $('#pdbligand').prop('disabled', false);
+            } else {
+                $('#pdbligand').prop('disabled', true);
+            }
+        });
+
+
         let chains_all = [];
         let chains = [];
         let atoms = viewer.selectedAtoms();
@@ -173,13 +195,11 @@ $(document).ready(function () {
         }
 
 
-
-
         let chainContent = ''
-        chainsCheckbox=[];
+        chainsCheckbox = [];
         for (let i = 0; i < chains.length; i++) {
             let chainId = "checkbox_" + chains[i];
-            chainsCheckbox.push('1_'+chains[i])
+            chainsCheckbox.push('1_' + chains[i])
             let contentTemp = '<div class="ui checkbox"><input class="group1" tabindex="0" type="checkbox" name="chain" id="' + chainId + '" checked="checked" value="' + chains[i] + '"> <label for="' + chainId + '">' + chains[i] + ' &nbsp;&nbsp;&nbsp;&nbsp;</label></div>'
             chainContent += contentTemp;
         }
@@ -194,16 +214,16 @@ $(document).ready(function () {
                 // console.log($(chainId).is('checked'))
 
 
-                if (chainsCheckbox[i].substr(0,1) == 1) {
+                if (chainsCheckbox[i].substr(0, 1) == 1) {
 
-                    chainsCheckbox[i]='0'+chainsCheckbox[i].substr(1);
+                    chainsCheckbox[i] = '0' + chainsCheckbox[i].substr(1);
                     // console.log(chainsCheckbox[i])
                     viewer.setStyle({chain: chains[i]}, {cartoon: {hidden: true}});
                     viewer.zoomTo();
                     viewer.render();
                     viewer.zoom(1.2, 0);
                 } else {
-                    chainsCheckbox[i]='1'+chainsCheckbox[i].substr(1);
+                    chainsCheckbox[i] = '1' + chainsCheckbox[i].substr(1);
                     // console.log(chainsCheckbox[i])
                     viewer.setStyle({chain: chains[i]}, {cartoon: {color: 'spectrum'}});
                     viewer.zoomTo();

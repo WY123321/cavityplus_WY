@@ -214,7 +214,7 @@
                     <div class="ui inline field">
                         <div class="ui action left icon input">
                             <div class="ui button" style="background-color: lightskyblue;">InputType</div>
-                            <select class="ui compact dropdown" onchange="" id="cavitySelect">
+                            <select class="ui compact dropdown" id="cavitySelect">
                                 <option value="entry">PDBEntry</option>
                                 <option value="file">PDBFile</option>
                             </select>
@@ -274,8 +274,10 @@
                         <div id="cligFile" style="display: none">
                             <div class="ui mini input">
                                 <div class="ui mini icon button">Ligand(s)</div>
-                                <div id="curligand_content">
-                                    js show the contant
+                                <div>
+                                    <select id="pdbligand" style="height: 100%" disabled>
+<!--                                        <option selected="selected" value="0">none</option>-->
+                                    </select>
                                 </div>
                             </div>
 
