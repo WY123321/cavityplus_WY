@@ -103,7 +103,7 @@ $(document).ready(function () {
     let element = $('#div_mol');
     let config = {backgroundColor: '#ffffff'};
     let viewer = $3Dmol.createViewer(element, config);
-    $("#PDBEntry_ID").attr("name", defaultModel);
+    $("#PDBEntry_ID").attr("name", defaultModel);//给输入框初始化一个name，方便我确定蛋白质叫啥名字
 
     $3Dmol.download("pdb:" + defaultModel, viewer, {}, function () {
         viewer.setStyle({}, {cartoon: {color: 'spectrum'}})
@@ -159,60 +159,40 @@ $(document).ready(function () {
 
 
     function chainsOperation(viewer) {
-        let pdbName = $("#PDBEntry_ID").attr("name")
-        var sel = $('#pdbligand').empty();
-        $.get('https://www.rcsb.org/pdb/rest/ligandInfo?structureId=' + pdbName).done(function (ret) {
-            var ligands = $(ret).find('ligand');
-            sel.empty();
-            $("#pdbligand").append('  <option  selected="selected" value="0">none</option>');
-            $.each(ligands, function (k, v) {
-                var lname = $(v).attr('chemicalID');
-                console.log(lname)
-                $('<option value="' + lname + '">' + lname + "</option>").appendTo(sel);
-            });
-            if (ligands.length > 0) {
-                $('#pdbligand').prop('disabled', false);
-            } else {
-                $('#pdbligand').prop('disabled', true);
-            }
-        });
-
 
         let chains_all = [];
         let chains = [];
         let atoms = viewer.selectedAtoms();
         console.log(atoms)
-        for (let i = 0; i < atoms.length; i++) {
+
+        for (let i = 0; i < atoms.length; i++) {//所有的AB拼接的一个数组
             chains_all.push(atoms[i].chain);
         }
+        console.log(chains_all);
 
-        for (let i = 0; i < chains_all.length; i++) {
+        for (let i = 0; i < chains_all.length; i++) {//去重 只剩下AB
             let items = chains_all[i];
             if ($.inArray(items, chains) == -1) {
                 chains.push(items);
-
             }
         }
-
+        console.log(chains)
 
         let chainContent = ''
-        chainsCheckbox = [];
+        let chainsCheckbox = [];//多选框的选中状态通过1_A 的1或者0来确定
         for (let i = 0; i < chains.length; i++) {
+
             let chainId = "checkbox_" + chains[i];
             chainsCheckbox.push('1_' + chains[i])
             let contentTemp = '<div class="ui checkbox"><input class="group1" tabindex="0" type="checkbox" name="chain" id="' + chainId + '" checked="checked" value="' + chains[i] + '"> <label for="' + chainId + '">' + chains[i] + ' &nbsp;&nbsp;&nbsp;&nbsp;</label></div>'
             chainContent += contentTemp;
         }
-        // console.log(chainsCheckbox);
         $("#content").html(chainContent);
 
 
-        for (let i = 0; i < chains.length; i++) {
+        for (let i = 0; i < chains.length; i++) {//给多选框添加单击事件,控制蛋白质显示或者隐藏
             let chainId = "#checkbox_" + chains[i];
             $(chainId).click(function () {
-                // console.log(chains[i])
-                // console.log($(chainId).is('checked'))
-
 
                 if (chainsCheckbox[i].substr(0, 1) == 1) {
 
@@ -232,6 +212,59 @@ $(document).ready(function () {
                 }
             })
         }
+
+
+        let pdbName = $("#PDBEntry_ID").attr("name")//这里是不对的 我是假定是通过输入获取蛋白质 我这里是拿输入框的name  默认加载的时候给输出框初始过一个name
+        var sel = $('#pdbligand').empty();
+        let selectName = [];
+        $.ajax({
+            url: 'https://www.rcsb.org/pdb/rest/ligandInfo',
+            data: "structureId=" + pdbName,
+            success: function (ret) {
+                console.log("success")
+                let ligands = $(ret).find('ligand');
+                sel.empty();
+                $("#pdbligand").append('  <option  selected="selected" value="0">none</option>');
+
+                $.each(ligands, function (k, v) {
+                    let lname = $(v).attr('chemicalID');
+                    console.log(lname)//拿到9in
+
+
+                    for (let i = 0; i < atoms.length; i++) {
+                        chains_all.push(atoms[i].chain);
+
+                        if (atoms[i].resn == lname) {
+                            selectName.push(atoms[i].chain + '_' + lname)
+                        }
+                    }
+                    console.log(selectName)//所有A_9IN
+                    let selectName_1 = []
+                    for (let i = 0; i < selectName.length; i++) {
+                        let items = selectName[i];
+                        if ($.inArray(items, selectName_1) == -1) {
+                            selectName_1.push(items);
+                        }
+                    }
+                    console.log(selectName_1)//去重后的A_9IN
+                    for (let i = 0; i < selectName_1.length; i++) {
+
+                        $('<option value="' + lname + '">' + selectName_1[i] + "</option>").appendTo(sel);
+                    }
+                });
+                if (ligands.length > 0) {
+                    $('#pdbligand').prop('disabled', false);
+                } else {
+                    $('#pdbligand').prop('disabled', true);
+                }
+            },
+            error: function (error) {
+                console.log(error);
+                console.log("没找到！")
+            }
+
+        });
+
 
     }
 
