@@ -262,9 +262,9 @@
                                     <span class="help-tip">
                                         <p>Ligand file should be uploaded if the mode is "With Ligand".</p>
                                     </span>
-                                    <input id="cmode_1" type="radio" name="mode" checked="checked"/>
+                                    <input id="cmode_1" type="radio" name="mode" checked="checked" value="0"/>
                                     <label for="cmode_1">No Ligand</label>
-                                    <input id="cmode_2" type="radio" name="mode">
+                                    <input id="cmode_2" type="radio" name="mode" value="1">
                                     <label for="cmode_2">With Ligand</label>
 
                                 </div>
@@ -275,9 +275,7 @@
                             <div class="ui mini input">
                                 <div class="ui mini icon button">Ligand(s)</div>
                                 <div>
-                                    <select id="pdbligand" style="height: 100%" disabled>
-<!--                                        <option selected="selected" value="0">none</option>-->
-                                    </select>
+                                    <select id="pdbligand" style="height: 100%" disabled> </select>
                                 </div>
                             </div>
 
@@ -285,7 +283,7 @@
 
                             <label>
                                 <div class="ui mini icon button">Ligand input (*.mol2)</div>
-                                <input class="ui mini input" type="file" name="ligfile" id="ligandFile"/>
+                                <input class="ui mini input" type="file" name="ligfile" id="ligandFile" accept=".mol2"/>
                             </label>
                         </div>
 
@@ -362,20 +360,20 @@
                             </div>
                         </div>
 
-                        <!--                                                <div style="text-align: center;" id="subcavop">-->
-                        <!--                                                    <button class="ui button" type="submit" id="submitCavity"-->
-                        <!--                                                            style="background-color: lightskyblue;">-->
-                        <!--                                                        Submit-->
-                        <!--                                                    </button>-->
-                        <!---->
-                        <!--                                                    <div class="ui active inline loader" id="cavityrunningshow">Running Cavity...</div>-->
-                        <!--                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-                        <!--                                                    <button class="ui button" id="checkcavitybar" style="display: none;">-->
-                        <!--                                                        Check-->
-                        <!--                                                    </button>-->
-                        <!--                                                    <div class="ui hidden hidden divider"></div>-->
-                        <!--                                                    <div id="timerapp"></div>-->
-                        <!--                                                </div>-->
+                        <div style="text-align: center;" id="subcavop">
+                            <button class="ui button" type="submit" id="submitCavity"
+                                    style="background-color: lightskyblue;">
+                                Submit
+                            </button>
+
+                            <div class="ui active inline loader" id="cavityrunningshow">Running Cavity...</div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button class="ui button" id="checkcavitybar" style="display: none;">
+                                Check
+                            </button>
+                            <div class="ui hidden hidden divider"></div>
+                            <div id="timerapp"></div>
+                        </div>
 
                     </form>
 
